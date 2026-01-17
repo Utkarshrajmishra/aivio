@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Host_Grotesk, Sora } from "next/font/google";
 import "./globals.css";
+
+const sora=Sora({
+  variable:"--font-sora",
+  subsets:["latin"]
+})
+
+const hostGrotesk=Host_Grotesk({
+  variable:"--font-host-grotesk",
+  subsets:["latin"]
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${hostGrotesk.variable} ${sora.variable} bg-zinc-50  antialiased`}
       >
         {children}
       </body>

@@ -1,0 +1,1 @@
+ALTER TABLE "metadata" ADD COLUMN "external_link" text NOT NULL;
