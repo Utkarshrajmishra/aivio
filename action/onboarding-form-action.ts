@@ -26,8 +26,7 @@ export async function handleForm(
     };
   }
 
-  // Here you would typically save to database
-  console.log("Validated data:", validateFields.data);
+  // console.log("Validated data:", validateFields.data);
 
   return {
     business: validateFields.data.business,
