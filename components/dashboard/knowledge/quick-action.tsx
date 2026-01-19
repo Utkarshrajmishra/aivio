@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { File, Globe, Upload } from "lucide-react";
 import { AddWebsite } from "./modals/add-website-modal";
+import { KnowledgeSource } from "@/types/knowledge-source";
 
 export interface QuickActionStateInterface {
   addWesbite: boolean;
@@ -15,6 +16,17 @@ const QuickAction = () => {
     uploadFile: false,
     createDocument: false,
   });
+
+  const [existingSources,setExistingSources]=useState<KnowledgeSource[]>([])
+  const [loading, setLoading]=useState(false)
+
+  const addWebsite=async()=>{
+    setLoading(true)
+    setTimeout(() => {
+            setLoading(false)
+    }, 8000);
+  }
+
   return (
     <div className="flex gap-4 justify-between">
       <section
@@ -60,7 +72,7 @@ const QuickAction = () => {
           </p>
         </div>
       </section>
-      <AddWebsite isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
+      <AddWebsite isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} existingSources={existingSources} loading={loading} addWebsite={addWebsite}/>
     </div>
   );
 };
