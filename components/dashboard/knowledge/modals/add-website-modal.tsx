@@ -69,8 +69,6 @@ export function AddWebsite({ isModalOpen, setIsModalOpen, existingSources, loadi
       }
 
       addWebsite()
-
-      // closeModal()
     }
   }, [state?.success])
 

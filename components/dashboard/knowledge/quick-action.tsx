@@ -22,9 +22,42 @@ const QuickAction = () => {
 
   const addWebsite=async()=>{
     setLoading(true)
-    setTimeout(() => {
-            setLoading(false)
-    }, 8000);
+   try {
+      // let resp;
+      // if(state?.type==="file" && state?.file){
+      // const formData=new FormData()
+      // formData.append("type","upload");
+      // formData.append("file",state?.file)
+
+      // resp=await fetch("/api/knowledge/store",{
+      //   method:"POST",
+      //   body:formData
+      // })
+      // } else{
+      //   resp=await fetch("/api/knowledge/store",{
+      //     method:"POST",
+      //     headers:{
+      //       "Content-Type":"application/json"
+      //     },
+      //     body:JSON.stringify(state)
+      //   })
+      // }
+
+      // if(!resp?.ok){
+      //   console.log("Failed to add website")
+      //   return
+      // }
+
+      // const res=await fetch("/api/knowledge/fetch")
+   } catch (error) {
+    
+   }finally{
+    setLoading(false)
+    setIsModalOpen((prev)=>({
+      ...prev,
+      addWesbite:false
+    }))
+   }
   }
 
   return (
